@@ -1,0 +1,130 @@
+/* Banner */
+
+.banner {
+    display: grid;
+    gap: 1rem;
+}
+
+.banner img:nth-child(1) {
+    grid-column: 1/3;
+}
+
+.banner img:nth-child(4) {
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+/* Eventos */
+
+.eventos__item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto repeat(2, 1fr) auto;
+    grid-template-areas: 
+        "imagem imagem"
+        "titulo titulo"
+        "data data"
+        "local botão"
+    ;
+}
+
+.eventos__item img {
+    grid-area: imagem;
+}
+
+.eventos__item h3 {
+    grid-area: titulo;
+    align-self: center;
+}
+
+.eventos__item h4 {
+    grid-area: data;
+}
+
+.eventos__item h5 {
+    grid-area: local;
+    align-self: end;
+}
+
+.eventos__item button {
+    grid-area: botão ;
+}
+
+/* Agenda */
+
+.agenda__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "imagem imagem"
+        "info atracao"
+    ;
+}
+
+.agenda__item img {
+    grid-area: imagem;
+}
+
+.agenda__informacoes {
+    grid-area: info;
+}
+
+.agenda__atracao {
+    grid-area: atracao;
+}
+
+
+
+@media screen and (min-width: 720px) {
+    /* Banner */
+   
+    .banner {
+        grid-template-columns: calc(50% - 0.75rem) auto auto;
+        column-gap: 1.5rem;
+    }
+    
+    .banner img:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+    
+    .banner img:nth-child(4) {
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+
+    /* Eventos */
+}
+
+@media  screen and (min-width: 1440px) {
+    /* Categorias */
+
+    .categorias {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem 1.5rem;
+        grid-template-areas: 
+            "titulo titulo"
+            "lista destaque"
+            "lista destaque"
+        ;
+    }
+
+    .categorias__titulo {
+        grid-area: titulo;
+    }
+
+    .categorias__lista {
+        grid-area: lista;
+    }
+
+    .destaques {
+        grid-area: destaque;
+    }
+
+    .categorias__imagem {
+        align-self: end;
+    }
+}
+
